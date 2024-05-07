@@ -19,7 +19,7 @@ func ShowPluginMetaData() bool {
 		metadata := PluginMetadata{
 			SchemaVersion:    "0.1.0",
 			Vendor:           "MAKEPAD",
-			Version:          "0.0.1",
+			Version:          version,
 			ShortDescription: "A Helmlike templating engine for Docker",
 			URL:              "https://github.com/Makepad-fr/docker-render",
 			Experimental:     true,
