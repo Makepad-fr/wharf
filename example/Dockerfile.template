@@ -1,0 +1,16 @@
+# Use an official base image
+FROM {{.BaseImage}}
+
+# Set the exposed port
+EXPOSE {{.Deployment.ExposedPort}}
+
+# Set environment variables
+{{range .Deployment.Environment}}
+ENV {{.Name}}="{{.Value}}"
+{{end}}
+
+# Copy source code
+COPY . {{.CopyDestination}}
+
+# Run command
+CMD {{.RunCommand}}
