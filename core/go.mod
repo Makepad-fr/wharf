@@ -1,4 +1,4 @@
-module github.com/Makepad-fr/docker-render
+module github.com/Makepad-fr/wharf/core
 
 go 1.22.2
 

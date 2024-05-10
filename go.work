@@ -1,0 +1,8 @@
+go 1.22.2
+
+use (
+	./cli
+	./core
+	./docker-plugins/commons
+	./docker-plugins/render
+)

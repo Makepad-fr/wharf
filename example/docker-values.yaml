@@ -1,0 +1,10 @@
+BaseImage: "ubuntu:latest"
+Deployment:
+  ExposedPort: "9091"
+  Environment:
+    - Name: "DEBUG"
+      Value: "false"
+    - Name: "LOG_LEVEL"
+      Value: "info"
+CopyDestination: "/app"
+RunCommand: "echo Hello World"

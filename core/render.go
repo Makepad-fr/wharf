@@ -1,4 +1,4 @@
-package docker_render
+package core
 
 import (
 	"errors"
