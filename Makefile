@@ -25,6 +25,10 @@ install-plugins: clean build-plugins
 	chmod +x ${PLUGINS_OUTPUT_FOLDER}/docker-*
 	cp ${PLUGINS_OUTPUT_FOLDER}/* ${DOCKER_PLUGINS_PATH}/
 
+.PHONY: test
+test:
+	go test -v ./core
+
 .PHONY: clean
 clean: clean-output-folder
 
