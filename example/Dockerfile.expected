@@ -1,0 +1,18 @@
+# Use an official base image
+FROM ubuntu:latest
+
+# Set the exposed port
+EXPOSE 9091
+
+# Set environment variables
+
+ENV DEBUG="false"
+
+ENV LOG_LEVEL="info"
+
+
+# Copy source code
+COPY . /app
+
+# Run command
+CMD echo Hello World
