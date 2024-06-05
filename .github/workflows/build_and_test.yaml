@@ -1,0 +1,72 @@
+name: Ensure version increment
+on:
+    pull_request:
+        branches:
+            - main
+        types: 
+            - opened
+            - synchronize
+            - reopened
+        paths:
+            - cli/*$
+            - core/**
+            - docker-plugins/**
+            - example/**
+concurrency: 
+    group: "${{ github.workflow_ref }} - ${{ github.ref }} - ${{ github.event_name }}"
+    cancel-in-progress: true
+jobs:
+    build_cli:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4.1.1
+              with:
+                fetch-depth: 1
+            - name: Setup Go 1.22.x
+              uses: actions/setup-go@v5
+              with:
+                go-version: "1.22.x"
+            - name: Build the CLI
+              run: make build
+    build_plugins:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4.1.1
+              with:
+                fetch-depth: 1
+            - name: Setup Go 1.22.x
+              uses: actions/setup-go@v5
+              with:
+                  go-version: "1.22.x"
+            - name: Build Docker plugins
+              run: make build-plugins
+    test_docker_plugins:
+        runs-on: ubuntu-latest
+        needs: build_plugins
+        steps:
+            - uses: actions/checkout@v4.1.1
+              with:
+                fetch-depth: 1
+            - name: Setup Go 1.22.x
+              uses: actions/setup-go@v5
+              with:
+                go-version: "1.22.x"
+            - name: Create plugins directory
+              run: mkdir -p ~/.docker/cli-plugins/
+            - name: Build Docker plugins
+              run: make install-plugins
+    test:
+        runs-on: ubuntu-latest
+        needs: [build_cli, build_plugins]
+        steps:
+            - uses: actions/checkout@v4.1.1
+              with:
+                fetch-depth: 1
+            - name: Setup Go 1.22.x
+              uses: actions/setup-go@v5
+              with:
+                go-version: '1.22.x'
+            - name: Test
+              run: make test
+            
+  
