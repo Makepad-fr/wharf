@@ -1,3 +1,3 @@
-package core
+package wharf
 
 const Version = "0.0.1"

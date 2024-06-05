@@ -3,9 +3,9 @@ package main
 import (
 	"fmt"
 
-	"github.com/Makepad-fr/wharf/core"
+	wharf "github.com/Makepad-fr/wharf/core"
 )
 
 func main() {
-	fmt.Println(core.Version)
+	fmt.Println(wharf.Version)
 }
