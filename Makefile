@@ -1,5 +1,5 @@
 OUTPUT_FOLDER?=./out
-PLUGINS_OUTPUT_FOLDER?=${OUTPUT_FOLDER}/docker-plugins
+PLUGINS_OUTPUT_FOLDER?=${OUTPUT_FOLDER}/docker-cli-plugins
 DOCKER_PLUGINS_PATH=~/.docker/cli-plugins
 
 .PHONY: build
@@ -11,7 +11,7 @@ build-plugins: ensure-plugins-output-folder-exists build-docker-render
 
 .PHONY: build-docker-render
 build-docker-render:
-	go build -o ${PLUGINS_OUTPUT_FOLDER}/docker-render docker-plugins/render/docker_render.go
+	go build -o ${PLUGINS_OUTPUT_FOLDER}/docker-render docker-cli-plugins/render/docker_render.go
 
 .PHONY: ensure-output-folder-exists
 ensure-output-folder-exists:

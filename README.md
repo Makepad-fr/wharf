@@ -1,7 +1,11 @@
 # Wharf
 
-A templating system engine for Docker
+A templating system for Dockerfiles.
 
-- [Docker plugins](./docker-plugins/README.md)
-- [CLI](./cli/README.md)
+## How to use it?
+
+Wharf can be used in several ways, you can choose how you want to use it
+
+- [Docker CLI Plugins](./docker-cli-plugins/README.md)
 - [Go dependency](./core/README.md)
+<!-- - [CLI](./cli/README.md) -->
