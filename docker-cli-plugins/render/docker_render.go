@@ -8,7 +8,7 @@ import (
 	"strings"
 
 	wharf "github.com/Makepad-fr/wharf/core"
-	"github.com/Makepad-fr/wharf/docker-plugins/commons"
+	"github.com/Makepad-fr/wharf/docker-cli-plugins/commons"
 )
 
 var metadata = commons.PluginMetadata{

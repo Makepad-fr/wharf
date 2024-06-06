@@ -10,7 +10,7 @@ on:
         paths:
             - cli/*$
             - core/**
-            - docker-plugins/**
+            - docker-cli-plugins/**
             - example/**
 concurrency: 
     group: "${{ github.workflow_ref }} - ${{ github.ref }} - ${{ github.event_name }}"
