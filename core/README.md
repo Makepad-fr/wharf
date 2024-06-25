@@ -1,4 +1,5 @@
 ## Using Wharf as Go dependency
+[![Go Reference](https://pkg.go.dev/badge/github.com/Makepad-fr/wharf/core.svg)](https://pkg.go.dev/github.com/Makepad-fr/wharf/core)
 
 Wharf let you create Dockerfiles from Dockerfile templates programmatically with Go.
 
