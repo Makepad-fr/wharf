@@ -1,8 +1,9 @@
-go 1.22.2
+go 1.22.4
 
 use (
 	./cli
 	./core
 	./docker-cli-plugins/commons
 	./docker-cli-plugins/render
+	./types
 )
